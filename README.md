@@ -7,10 +7,12 @@ localhost.
 
 Roughly based on https://github.com/tadruj/s3upload-coffee-javascript
 
+Tested on production on Chrome and Firefox.
+
 ## Use
 
-Just put `s3put.js` into your statics folder, and make it dance for you by
-using this example as your guide.
+Just put `s3put.js` into your statics folder, configure your S3 bucket for CORS,
+and make it dance for you by using this example as your guide.
 
 ## CORS config needed on S3 side:
 
