@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/javascripts/s3put.js"></script>
+    <script type="text/javascript">
+      function upload_file() {
+        S3Put.start({
+          input_id: 's3put_input',
+          s3_sign_url: '/upload/sign',
+          s3_key: 'original',
+          onProgress: function(percent, status) { // Use this for live upload progress bars
+            document.getElementById('progress').textContent = percent + "% " + status;
+          },
+          onFinish: function(public_url) { // Get the URL of the uploaded file
+            document.getElementById('progress').textContent = "100% Done";
+          },
+          onError: function(status) {
+            document.getElementById('progress').textContent = "Error: " + status;
+          }
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <input id="s3put_input" type='file' name='files[]' onchange="upload_file();" />
+    <div id="progress"></div>
+  </body>
+</html>
