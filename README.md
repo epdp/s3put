@@ -55,10 +55,6 @@ Roughly based on https://github.com/tadruj/s3upload-coffee-javascript
     AWS_KEY_ID = 'blah'
     AWS_SECRET_KEY = 'blah+FZDW+blah'
 
-    get '/upload' do
-      erb :'form'
-    end
-
     get '/upload/sign' do
       objectName = params[:s3_key]
       mimeType = params['s3_object_type']
