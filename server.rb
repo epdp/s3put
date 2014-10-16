@@ -3,9 +3,9 @@ require 'sinatra'
 require 'base64'
 require 'json'
 
-BUCKET = 'videos-adman-public-dev'
-AWS_KEY_ID = 'AKIAJSXLL3KEOHVSFG7A'
-AWS_SECRET_KEY = '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'
+BUCKET = 'blah'
+AWS_KEY_ID = 'blah'
+AWS_SECRET_KEY = 'blah+FZDW+blah'
 
 get '/' do
   erb :'form'
