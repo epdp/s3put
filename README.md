@@ -16,6 +16,7 @@ and make it dance for you by using this example as your guide.
 
 ## CORS config needed on S3 side:
 
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
         <CORSRule>
@@ -31,14 +32,18 @@ and make it dance for you by using this example as your guide.
             <AllowedHeader>*</AllowedHeader>
         </CORSRule>
     </CORSConfiguration>
+```
 
 ## HTML on client:
 
+```html
     <input id="s3put_input" type='file' name='files[]' onchange="upload_file();" />
     <div id="progress"></div>
+```
 
 ## JS on client:
 
+```javascript
     function upload_file() {
       S3Put.start({
         input_id: 's3put_input',
@@ -55,9 +60,11 @@ and make it dance for you by using this example as your guide.
         }
       });
     }
+```
 
 ## Ruby on server:
 
+```ruby
     BUCKET = 'blah'
     AWS_KEY_ID = 'blah'
     AWS_SECRET_KEY = 'blah+FZDW+blah'
@@ -77,3 +84,4 @@ and make it dance for you by using this example as your guide.
         url: "http://#{BUCKET}.s3.amazonaws.com/#{objectName}"
       }.to_json
     end
+```
